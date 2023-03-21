@@ -1,39 +1,28 @@
-# LABORATORIJSKA VJEZBA 2
-
 from datetime import date
 
-# Podaci o kolegiju
-ime_kolegija = input("Unesite ime kolegija: ").upper()
-ects_bodovi = int(input("Unesite ECTS bodove za kolegij: "))
+kolegij = {}
 
-# Stvaranje rječnika za kolegij
-kolegij = {
-    "ime": ime_kolegija, "ects": ects_bodovi
-}
+kolegij["ime"] = input("Unesite ime kolegija: ").upper()
+kolegij["bodovi"] = int(input("Unesite ECTS bodove za kolegij: "))
 
-# Podaci o ispitu
-dan = int(input("Unesite dan ispita: "))
-mjesec = int(input("Unesite mjesec ispita: "))
-godina = int(input("Unesite godinu ispita: "))
 
-# Stvaranje objekta datuma
-datum_ispita = date(godina, mjesec, dan)
+ispit = {}
 
-# Stvaranje rječnika za ispit
-ispit = {
-    "kolegij": kolegij, "datum": datum_ispita
-}
+ispit["kolegij"]= kolegij
 
-# Podaci o studentu
-ime_studenta = input("Unesite ime studenta: ").capitalize()
-prezime_studenta = input("Unesite prezime studenta: ").capitalize()
 
-# Stvaranje rječnika za studenta
-student = {
-    "ispit": ispit, "ime": ime_studenta, "prezime": prezime_studenta
-}
+dan = ispit["dan"] = int(input("Unesite dan: "))
+mjesec = ispit["mjesec"] = int(input("Unesite mjesec: "))
+godina = ispit["godina"] = int(input("Unesite godinu: "))
+ispit["datum"] = date(godina, mjesec, dan)
 
-# Ispis
-print("Student", ime_studenta, prezime_studenta)
-print("je prijavio ispit iz kolegija", student["ispit"]["kolegij"]["ime"])
-print("koji će se održati:", student["ispit"]["datum"])
+student = {}
+
+student["ispit"]= ispit
+
+
+student["ime"] = input("Unesite ime studenta: ")
+student["prezime"] = input("Unesite prezime studenta: ")
+
+print("Student", student["ime"], student["prezime"])
+print("je prijavio ispit iz kolegija", student["ispit"]["kolegij"]["ime"], "koji će se održati datuma: ", student["ispit"]["datum"])
