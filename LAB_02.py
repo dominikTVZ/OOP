@@ -21,8 +21,8 @@ student = {}
 student["ispit"]= ispit
 
 
-student["ime"] = input("Unesite ime studenta: ")
-student["prezime"] = input("Unesite prezime studenta: ")
+student["ime"] = input("Unesite ime studenta: ").title()
+student["prezime"] = input("Unesite prezime studenta: ").title()
 
 print("Student", student["ime"], student["prezime"])
 print("je prijavio ispit iz kolegija", student["ispit"]["kolegij"]["ime"], "koji će se održati datuma: ", student["ispit"]["datum"])
