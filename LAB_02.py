@@ -5,20 +5,20 @@ kolegij = {}
 kolegij["ime"] = input("Unesite ime kolegija: ").upper()
 kolegij["bodovi"] = int(input("Unesite ECTS bodove za kolegij: "))
 
-
 ispit = {}
 
-ispit["kolegij"]= kolegij
+ispit["kolegij"] = kolegij
 
 
-dan = ispit["dan"] = int(input("Unesite dan: "))
-mjesec = ispit["mjesec"] = int(input("Unesite mjesec: "))
-godina = ispit["godina"] = int(input("Unesite godinu: "))
+dan = int(input("Unesite dan: "))
+mjesec = int(input("Unesite mjesec: "))
+godina = int(input("Unesite godinu: "))
+
 ispit["datum"] = date(godina, mjesec, dan)
 
 student = {}
 
-student["ispit"]= ispit
+student["ispit"] = ispit
 
 
 student["ime"] = input("Unesite ime studenta: ").title()
