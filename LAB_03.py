@@ -45,13 +45,10 @@ for ispit in ispiti:
 studenti = []
 
 broj_studenta= int(input("Unesite broj studenta: "))
+
 for i in range(1, broj_studenta+1):
     student = {}
-
-    for j,
-
-        student['ime'] = input(f"Unesite ime {i}. kolegija: ")
-        student['prezime'] = int(input(f"Unesite broj ects-a {i}. kolegija: "))
-
-        studenti.append(student)
+    student['ime'] = input(f"Unesite ime {i}. studenta: ")
+    student['prezime'] = input(f"Unesite prezime {i}. studenta: ")
+    studenti.append(student)
 
