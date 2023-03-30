@@ -24,7 +24,7 @@ prodaja["datum"] = date(godina, mjesec, dan)
 prodaja["artikl"] = artikl
 prodaja["korisnik"] = korisnik
 
-#ISPIS
+#ISPIS ZA 1.PROGRAMSKI ZADATAK
 
 print("Informacije o artiklu: ")
 print("\t Naslov: ", prodaja["artikl"]["naslov"])
@@ -41,5 +41,23 @@ print("\t", prodaja["korisnik"]["ime"], prodaja["korisnik"]["prezime"])
 print("\t Telefon: ", prodaja["korisnik"]["telefon"])
 print("\t Email: ", prodaja["korisnik"]["email"])
 
+#2.PROGRAMSKI ZADATAK
 
+
+
+korisnici = ()
+
+broj_korisnika = int(input("Unesite broj korisnika: "))
+
+for i in range(1, broj_korisnika+1):
+    korisnici = []
+
+    for j in range(1, broj_korisnika+1):
+        korisnik  = {}
+
+
+
+kategorije = ()
+
+prodaje = ()
 
