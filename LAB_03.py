@@ -35,20 +35,27 @@ for i in range(1, broj_ispita+1):
 
     ispiti.append(ispit)
 
-"""ISPIS ZA 2.ZADATAK
-print("Popis svih ispita: ")
-for ispit in ispiti:
-    print(f"\t Ispit iz kolegija {ispit['kolegij']['ime']},")
-    print(f"\tkoji nosi {ispit['kolegij']['ECTS']} bodova održat će se {ispit['datum']}")
-"""
-
 studenti = []
 
 broj_studenta= int(input("Unesite broj studenta: "))
 
-for i in range(1, broj_studenta+1):
+for i in range(1, broj_studenta + 1):
     student = {}
     student['ime'] = input(f"Unesite ime {i}. studenta: ")
     student['prezime'] = input(f"Unesite prezime {i}. studenta: ")
     studenti.append(student)
+
+    for j, kolegij in enumerate(kolegiji, start=1):
+        print(f"\t{j}. ispit iz kolegija {kolegij['ime']}")
+    odabrani_ispit = int(input("Unesite kolegij: "))
+    student['ispit'] = ispiti[odabrani_ispit-1]
+
+
+
+print("Popis svih studenata: ")
+for student in studenti:
+    print(f"\t Student {student['ime']} {student['prezime']} je prijavio:")
+    print(f"\tIspit iz kolegija {student['ispit']['kolegij']['ime']} koji će se održati ")
+    print(f"{student['ispit']['datum']}")
+
 
