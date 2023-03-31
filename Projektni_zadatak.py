@@ -21,9 +21,8 @@ broj_kategorija = int(input("Unesite broj kategorija: "))
 for i in range(1, broj_kategorija+1):
     kategorija = {}
 
-    naziv_kategorija = input(f"Unesite naziv {i} kategorije: ")
     naziv = {}
-    naziv['ime']  = naziv_kategorija
+    naziv['naziv'] = input(f"Unesite naziv {i} kategorije: ")
 
     artikli= []
     broj_artikla = int(input(f"Unesite broj artikala za {i} kategoriju: "))
@@ -42,51 +41,41 @@ broj_prodaja  = int(input("Unesite broj prodaja: "))
 for i in range(1, broj_prodaja+1):
     prodaja = {}
 
-    dan = int(input(f"Unesite dan isteka {i}prodaje: "))
-    mjesec = int(input(f"Unesite mjesec isteka {i}prodaje: "))
-    godina = int(input(f"Unesite godinu isteka {i}prodaje: "))
+    dan = int(input(f"Unesite dan isteka {i}. prodaje: "))
+    mjesec = int(input(f"Unesite mjesec isteka {i}. prodaje: "))
+    godina = int(input(f"Unesite godinu isteka {i}. prodaje: "))
     prodaja['datum'] = date(godina, mjesec, dan)
 
+    print(f"Odaberite korisnika {i}. prodaje: ")
 
-    print(f"Odaberite korisnika{i}prodaje: ")
-
-    for j, korisnik in enumerate(korisnici, start=1):
+    for j, korisnik in enumerate(korisnici, start = 1):
         print(f"\t{j}. {korisnik['ime']} {korisnik['prezime']}")
 
-    odabrani_korisnik = int(input("Odabrani korisnik: "))
+        odabrani_korisnik = int(input("Odabrani korisnik: "))
 
     print(f"Odaberite kategoriju {i} prodaje: ")
 
-    for k, kategorija in enumerate(kategorije, start=1):
-        print(f"\t{k}. {naziv['ime']} ")
+    for k, kategorija in enumerate(kategorije, start = 1):
+        print(f"\t{k}. {kategorija['naziv']} ")
 
     odabrana_kategorija = int(input("Odabrana kategorija: "))
 
+    for z, kategorija in enumerate(kategorije, start = 1):
+        print(f"\t{z}. {kategorija['artikl']['naslov']}")
 
+    odabrani_artikl = int(input("Odabrani artikl: "))
 
-
-        prodaja["artikl"] = artikl
-        prodaja["korisnik"] = korisnik
 
     prodaje.append(prodaja)
 
 
+#ISPIS
+    for i in range(1, broj_prodaja+1):
+        print(f"{i}. prodaja:")
+        print(f"Informacije o korisniku: {prodaja['korisnik']['ime']}")
 
-"""
-#ISPIS ZA 1.PROGRAMSKI ZADATAK
 
-print("Informacije o artiklu: ")
-print("\t Naslov: ", prodaja["artikl"]["naslov"])
-print("\t", prodaja["artikl"]["opis"])
-print("\t Cijena: ", prodaja["artikl"]["cijena"])
 
-print("Datum isteka prodaje: ")
-print("\t Dan: ", prodaja["datum"].day)
-print("\t Mjesec: ", prodaja["datum"].month)
-print("\t Godina: ", prodaja["datum"].year)
 
-print("Informacije o korisniku: ")
-print("\t", prodaja["korisnik"]["ime"], prodaja["korisnik"]["prezime"])
-print("\t Telefon: ", prodaja["korisnik"]["telefon"])
-print("\t Email: ", prodaja["korisnik"]["email"])
-"""
+
+
