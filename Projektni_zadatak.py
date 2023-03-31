@@ -1,29 +1,78 @@
 from datetime import date
 
-korisnik = {}
+#2.PROGRAMSKI ZADATAK
 
-korisnik["ime"] = input("Unesite ime korisnika: ").title()
-korisnik["prezime"] = input("Unesite prezime korisnika: ").title()
-korisnik["telefon"] = int(input("Unesite telefon korisnika: "))
-korisnik["email"] = input("Unesite email korisnika: ").strip()
+korisnici = []
+broj_korisnika = int(input("Unesite broj korisnika: "))
+
+for i in range(1, broj_korisnika+1):
+    korisnik = {}
+
+    korisnik['ime'] = input("Unesite ime korisnika: ").title()
+    korisnik['prezime'] = input("Unesite prezime korisnika: ").title()
+    korisnik['telefon'] = int(input("Unesite telefon korisnika: "))
+    korisnik['email'] = input("Unesite email korisnika: ").strip()
+    korisnici.append(korisnik)
 
 
-artikl = {}
+kategorije = []
+broj_kategorija = int(input("Unesite broj kategorija: "))
 
-artikl["naslov"] = input("Unesite naslov artikla: ")
-artikl["opis"] = input("Unesite opis artikla: ")
-artikl["cijena"] = float(input("Unesite cijenu artikla: "))
+for i in range(1, broj_kategorija+1):
+    kategorija = {}
 
-prodaja = {}
+    naziv_kategorija = input(f"Unesite naziv {i} kategorije: ")
+    naziv = {}
+    naziv['ime']  = naziv_kategorija
 
-dan = int(input("Unesite dan isteka prodaje: "))
-mjesec = int(input("Unesite mjesec isteka prodaje: "))
-godina = int(input("Unesite godinu isteka prodaje: "))
+    artikli= []
+    broj_artikla = int(input(f"Unesite broj artikala za {i} kategoriju: "))
+    for j in range(1, broj_artikla+1):
+        artikl = {}
+        artikl['naslov'] = input(f"Unesite naslov {j} artikla: ")
+        artikl['opis'] = input(f"Unesite opis {j} artikla: ")
+        artikl['cijena'] = float(input(f"Unesite cijenu {j} artikla: "))
 
-prodaja["datum"] = date(godina, mjesec, dan)
-prodaja["artikl"] = artikl
-prodaja["korisnik"] = korisnik
+    kategorije.append(kategorija)
 
+
+prodaje = []
+broj_prodaja  = int(input("Unesite broj prodaja: "))
+
+for i in range(1, broj_prodaja+1):
+    prodaja = {}
+
+    dan = int(input(f"Unesite dan isteka {i}prodaje: "))
+    mjesec = int(input(f"Unesite mjesec isteka {i}prodaje: "))
+    godina = int(input(f"Unesite godinu isteka {i}prodaje: "))
+    prodaja['datum'] = date(godina, mjesec, dan)
+
+
+    print(f"Odaberite korisnika{i}prodaje: ")
+
+    for j, korisnik in enumerate(korisnici, start=1):
+        print(f"\t{j}. {korisnik['ime']} {korisnik['prezime']}")
+
+    odabrani_korisnik = int(input("Odabrani korisnik: "))
+
+    print(f"Odaberite kategoriju {i} prodaje: ")
+
+    for k, kategorija in enumerate(kategorije, start=1):
+        print(f"\t{k}. {naziv['ime']} ")
+
+    odabrana_kategorija = int(input("Odabrana kategorija: "))
+
+
+
+
+        prodaja["artikl"] = artikl
+        prodaja["korisnik"] = korisnik
+
+    prodaje.append(prodaja)
+
+
+
+"""
 #ISPIS ZA 1.PROGRAMSKI ZADATAK
 
 print("Informacije o artiklu: ")
@@ -40,24 +89,4 @@ print("Informacije o korisniku: ")
 print("\t", prodaja["korisnik"]["ime"], prodaja["korisnik"]["prezime"])
 print("\t Telefon: ", prodaja["korisnik"]["telefon"])
 print("\t Email: ", prodaja["korisnik"]["email"])
-
-#2.PROGRAMSKI ZADATAK
-
-
-
-korisnici = ()
-
-broj_korisnika = int(input("Unesite broj korisnika: "))
-
-for i in range(1, broj_korisnika+1):
-    korisnici = []
-
-    for j in range(1, broj_korisnika+1):
-        korisnik  = {}
-
-
-
-kategorije = ()
-
-prodaje = ()
-
+"""
