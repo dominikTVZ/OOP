@@ -21,11 +21,10 @@ broj_kategorija = int(input("Unesite broj kategorija: "))
 for i in range(1, broj_kategorija+1):
     kategorija = {}
 
-    naziv = {}
-    naziv['naziv'] = input(f"Unesite naziv {i} kategorije: ")
+    kategorija['naziv'] = input(f"Unesite naziv {i} kategorije: ")
 
-    artikli= []
-    broj_artikla = int(input(f"Unesite broj artikala za {i} kategoriju: "))
+    kategorija['artikli']= []
+    broj_artikla = int(input(f"Unesite broj artikla za {i} kategoriju: "))
     for j in range(1, broj_artikla+1):
         artikl = {}
         artikl['naslov'] = input(f"Unesite naslov {j} artikla: ")
@@ -41,6 +40,10 @@ broj_prodaja  = int(input("Unesite broj prodaja: "))
 for i in range(1, broj_prodaja+1):
     prodaja = {}
 
+
+    prodaja['artikli'] = kategorije
+    prodaja['korisnik'] = korisnici
+
     dan = int(input(f"Unesite dan isteka {i}. prodaje: "))
     mjesec = int(input(f"Unesite mjesec isteka {i}. prodaje: "))
     godina = int(input(f"Unesite godinu isteka {i}. prodaje: "))
@@ -48,31 +51,26 @@ for i in range(1, broj_prodaja+1):
 
     print(f"Odaberite korisnika {i}. prodaje: ")
 
-    for j, korisnik in enumerate(korisnici, start = 1):
+    for j, korisnik in enumerate(korisnici, start=1):
         print(f"\t{j}. {korisnik['ime']} {korisnik['prezime']}")
 
-        odabrani_korisnik = int(input("Odabrani korisnik: "))
+    odabrani_korisnik = int(input("Odabrani korisnik: "))
 
     print(f"Odaberite kategoriju {i} prodaje: ")
 
-    for k, kategorija in enumerate(kategorije, start = 1):
+    for k, kategorija in enumerate(kategorije, start=1):
         print(f"\t{k}. {kategorija['naziv']} ")
 
     odabrana_kategorija = int(input("Odabrana kategorija: "))
 
-    for z, kategorija in enumerate(kategorije, start = 1):
-        print(f"\t{z}. {kategorija['artikl']['naslov']}")
+    print(f"Odaberite artikl {i}.prodaje: ")
+    for z, kategorija in enumerate(kategorije, start=1):
+        print(f"\t{z}. {kategorija['artikli']}")
+
 
     odabrani_artikl = int(input("Odabrani artikl: "))
 
-
     prodaje.append(prodaja)
-
-
-#ISPIS
-    for i in range(1, broj_prodaja+1):
-        print(f"{i}. prodaja:")
-        print(f"Informacije o korisniku: {prodaja['korisnik']['ime']}")
 
 
 
