@@ -15,6 +15,7 @@ for i in range(1, broj_korisnika+1):
     korisnici.append(korisnik)
 
 
+
 kategorije = []
 broj_kategorija = int(input("Unesite broj kategorija: "))
 
@@ -53,7 +54,7 @@ for i in range(1, broj_prodaja+1):
     for j, korisnik in enumerate(korisnici, start=1):
         print(f"\t{j}. {korisnik['ime']} {korisnik['prezime']}")
 
-    odabrani_korisnik = int(input("Odabrani korisnik: "))
+    odabrani_korisnik = int(input("Odabrani korisnik: "))-1
 
 #ODABIR KATEGORIJE
     print(f"Odaberite kategoriju {i} prodaje: ")
@@ -61,18 +62,18 @@ for i in range(1, broj_prodaja+1):
     for k, kategorija in enumerate(kategorije, start=1):
         print(f"\t{k}. {kategorija['naziv']} ")
 
-    odabrana_kategorija = int(input("Odabrana kategorija: "))
+    odabrana_kategorija = int(input("Odabrana kategorija: "))-1
 
 #ODABIR ARTIKLA
     print(f"Odaberite artikl {i}.prodaje: ")
 
-    for z, artikl in enumerate(kategorije[odabrana_kategorija-1]['artikli'], start=1):
-            print(f"\t{z}. {kategorije[odabrana_kategorija-1]['artikli'][z-1]['naslov']}")
+    for z, artikl in enumerate(kategorije[odabrana_kategorija]['artikli'], start=1):
+            print(f"\t{z}. {kategorije[odabrana_kategorija]['artikli'][z-1]['naslov']}")
 
-    odabrani_artikl = int(input("Odabrani artikl: "))
+    odabrani_artikl = int(input("Odabrani artikl: "))-1
 
-    prodaja["korisnik"] = korisnici[odabrani_korisnik-1]
-    prodaja["artikl"] = kategorije[odabrana_kategorija-1]["artikli"][odabrani_artikl - 1]
+    prodaja["korisnik"] = korisnici[odabrani_korisnik]
+    prodaja["artikl"] = kategorije[odabrana_kategorija]["artikli"][odabrani_artikl]
     prodaje.append(prodaja)
 
 
@@ -93,10 +94,6 @@ for i, prodaja in enumerate(prodaje, start=1):
     print(f'\t Dan: {prodaja["datum"].day}')
     print(f'\t Mjesec: {prodaja["datum"].month}')
     print(f'\t Godina: {prodaja["datum"].year}')
-
-    print('-'*30)
-
-
 
 
 
