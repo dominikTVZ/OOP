@@ -67,12 +67,12 @@ for i in range(1, broj_prodaja+1):
     print(f"Odaberite artikl {i}.prodaje: ")
 
     for z, artikl in enumerate(kategorije[odabrana_kategorija-1]['artikli'], start=1):
-            print(f"\t{z}. {kategorije[odabrana_kategorija-1]['artikli'][z-1]['naslov']}")
+            print(f"\t{z}. {kategorije[odabrana_kategorija-1]['artikli'][z]['naslov']}")
 
     odabrani_artikl = int(input("Odabrani artikl: "))
 
-    prodaja["korisnik"] = korisnici[odabrani_korisnik - 1]
-    prodaja["artikl"] = kategorije[odabrana_kategorija - 1]["artikli"][odabrani_artikl - 1]
+    prodaja["korisnik"] = korisnici[odabrani_korisnik-1]
+    prodaja["artikl"] = kategorije[odabrana_kategorija-1]["artikli"][odabrani_artikl - 1]
     prodaje.append(prodaja)
 
 
