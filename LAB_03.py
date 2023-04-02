@@ -55,4 +55,3 @@ for student in studenti:
     print(f"\t Student {student['ime']} {student['prezime']} je prijavio:")
     print(f"\tIspit iz kolegija {student['ispit']['kolegij']['ime']} koji će se održati ")
     print(f"{student['ispit']['datum']}")
-
