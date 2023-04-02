@@ -8,7 +8,6 @@ for i in range(1, broj_kolegija+1):
 
     kolegij['ime'] = input(f"Unesite ime {i}. kolegija: ")
     kolegij['ECTS'] = int(input(f"Unesite broj ects-a {i}. kolegija: "))
-
     kolegiji.append(kolegij)
 
 
@@ -37,25 +36,23 @@ for i in range(1, broj_ispita+1):
 
 studenti = []
 
-broj_studenta= int(input("Unesite broj studenta: "))
+broj_studenata = int(input("Unesite broj studenta: "))
 
-for i in range(1, broj_studenta + 1):
+for i in range(1, broj_studenata + 1):
     student = {}
     student['ime'] = input(f"Unesite ime {i}. studenta: ")
     student['prezime'] = input(f"Unesite prezime {i}. studenta: ")
-    studenti.append(student)
 
-    for j, kolegij in enumerate(kolegiji, start=1):
-        print(f"\t{j}. ispit iz kolegija {kolegij['ime']}")
+
+    for j, ispit in enumerate(ispiti, start=1):
+        print(f"\t{j}. ispit iz kolegija {ispit['kolegij']['ime']}")
     odabrani_ispit = int(input("Unesite kolegij: "))
     student['ispit'] = ispiti[odabrani_ispit-1]
-
-
+    studenti.append(student)
 
 print("Popis svih studenata: ")
 for student in studenti:
     print(f"\t Student {student['ime']} {student['prezime']} je prijavio:")
     print(f"\tIspit iz kolegija {student['ispit']['kolegij']['ime']} koji će se održati ")
     print(f"{student['ispit']['datum']}")
-
 
