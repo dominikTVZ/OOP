@@ -8,10 +8,10 @@ broj_korisnika = int(input("Unesite broj korisnika: "))
 for i in range(1, broj_korisnika+1):
     korisnik = {}
 
-    korisnik['ime'] = input("Unesite ime korisnika: ").title()
-    korisnik['prezime'] = input("Unesite prezime korisnika: ").title()
-    korisnik['telefon'] = int(input("Unesite telefon korisnika: "))
-    korisnik['email'] = input("Unesite email korisnika: ").strip()
+    korisnik['ime'] = input(f"Unesite ime {i}. korisnika: ").title()
+    korisnik['prezime'] = input(f"Unesite prezime {i}. korisnika: ").title()
+    korisnik['telefon'] = int(input(f"Unesite telefon korisnika: "))
+    korisnik['email'] = input(f"Unesite email {i}. korisnika: ").strip()
     korisnici.append(korisnik)
 
 
