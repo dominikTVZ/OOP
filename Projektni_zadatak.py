@@ -68,7 +68,7 @@ for i in range(1, broj_prodaja+1):
     print(f"Odaberite artikl {i}.prodaje: ")
 
     for z, artikl in enumerate(kategorije[odabrana_kategorija]['artikli'], start=1):
-            print(f"\t{z}. {kategorije[odabrana_kategorija]['artikli'][z-1]['naslov']}")
+            print(f"\t{z}. {artikl['naslov']}")
 
     odabrani_artikl = int(input("Odabrani artikl: "))-1
 
@@ -94,7 +94,6 @@ for i, prodaja in enumerate(prodaje, start=1):
     print(f'\t Dan: {prodaja["datum"].day}')
     print(f'\t Mjesec: {prodaja["datum"].month}')
     print(f'\t Godina: {prodaja["datum"].year}')
-
 
 
 
